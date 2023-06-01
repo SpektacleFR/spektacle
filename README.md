@@ -1,3 +1,2 @@
-# Spektacle.ti
-This was supposed to be the original domain, but the new domain is here:
-spektacle.vercel.app
+# Spektacle
+Go ahead and check out the site in all of it's glory here: https://spektacle.vercel.app
