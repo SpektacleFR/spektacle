@@ -9,7 +9,6 @@ $.ajax({
                     $(`<a href="${val}" class="interactable image">
                     <img src="${val}" class="render" alt="render">
                     </a>`).appendTo('#renders');
-                    console.log(val);
                 }
             } 
         });
