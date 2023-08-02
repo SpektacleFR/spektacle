@@ -14,7 +14,9 @@
 #trailer {
     height: 20px;
     width: 20px;
-    background-color: lightgray;
+    /*background-color: lightgray;*/
+    background-color: transparent;
+    border: 2px solid lightgray;
     border-radius: 20px;
     position: fixed;
     top: 0px;
@@ -26,6 +28,24 @@
 }
 
 body:hover > #trailer {
+    opacity: 1;
+}
+
+#trailer2 {
+    height: 10px;
+    width: 10px;
+    background-color: lightgray;
+    border-radius: 20px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 500ms ease;
+}
+
+body:hover > #trailer2 {
     opacity: 1;
 }
 
@@ -50,6 +70,26 @@ p {
     text-align: center;
     font-family: 'Montserrat', sans-serif;
     line-height: 20px;
+}
+
+.socials {
+    align-items: center;
+    display: flex;
+}
+
+.fa {
+    color: white;
+    text-decoration: none;
+    text-align:center;
+    padding: 20px;
+}
+
+.fa:before {
+    font-size: 1.5em;
+}
+
+.yugen > img {
+    width: 1.5em;
 }
 
 .landing {

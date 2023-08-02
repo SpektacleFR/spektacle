@@ -1,5 +1,5 @@
 const trailer = document.getElementById("trailer");
-const trailerscale = document.getElementById("trailer-scale");
+const trailer2 = document.getElementById("trailer2");
 
 const animatetrailer = (e, interacting) => {
     const x = e.clientX - trailer.offsetWidth / 2;
@@ -10,7 +10,21 @@ const animatetrailer = (e, interacting) => {
     }
 
     trailer.animate(keyframes, {
-        duration: 100,
+        duration: 500,
+        fill: "forwards"
+    });
+}
+
+const animateTrailer2 = (e) => {
+    const xx = e.clientX - trailer2.offsetWidth / 2;
+    const yy = e.clientY - trailer2.offsetHeight / 2;
+
+    const keyframes = {
+        transform: `translate(${xx}px, ${yy}px)`
+    }
+
+    trailer2.animate(keyframes, {
+        duration: 0,
         fill: "forwards"
     });
 }
@@ -20,4 +34,5 @@ window.onmousemove = e => {
           interacting = interactable !== null;
 
     animatetrailer(e, interacting);
+    animateTrailer2(e);
 }
