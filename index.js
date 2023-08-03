@@ -1,6 +1,8 @@
 const trailer = document.getElementById("trailer");
 const trailer2 = document.getElementById("trailer2");
 
+const milliseconds = 10;
+
 const animatetrailer = (e, interacting) => {
     const x = e.clientX - trailer.offsetWidth / 2;
     const y = e.clientY - trailer.offsetHeight / 2;
@@ -11,7 +13,8 @@ const animatetrailer = (e, interacting) => {
 
     trailer.animate(keyframes, {
         duration: 500,
-        fill: "forwards"
+        fill: "forwards",
+        easing: "linear"
     });
 }
 
@@ -30,8 +33,9 @@ const animateTrailer2 = (e) => {
 }
 
 window.onmousemove = e => {
+    // do some stuff
     const interactable = e.target.closest(".interactable"),
-          interacting = interactable !== null;
+        interacting = interactable !== null;
 
     animatetrailer(e, interacting);
     animateTrailer2(e);
