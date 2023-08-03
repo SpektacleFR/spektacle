@@ -74,8 +74,19 @@ p {
 
 .socials {
     align-items: center;
+    justify-content: center;
     display: flex;
-    padding-top: 50px;
+    min-width: 0px;
+    width: 100vw;
+    gap: 50px;
+    margin-top: 50px;
+    text-decoration: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .socials > a {
@@ -93,7 +104,6 @@ p {
     color: white;
     text-decoration: none;
     text-align:center;
-    padding: 20px;
 }
 
 .fa:before {
@@ -102,6 +112,7 @@ p {
 
 .yugen > img {
     width: 1.5em;
+    
 }
 
 .landing {
@@ -110,10 +121,13 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 100px;
 }
 
 .main-grid {
     display: grid;
+    align-items: center;
+    justify-content: center;
     margin: 10%;
     gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));

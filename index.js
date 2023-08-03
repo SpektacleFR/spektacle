@@ -1,11 +1,16 @@
 const trailer = document.getElementById("trailer");
 const trailer2 = document.getElementById("trailer2");
 
-const milliseconds = 10;
+// Stuff for the mouse movement
+var interactable = null;
+var interacting = null;
 
-const animatetrailer = (e, interacting) => {
-    const x = e.clientX - trailer.offsetWidth / 2;
-    const y = e.clientY - trailer.offsetHeight / 2;
+var x = null;
+var y = null;
+
+const animatetrailer = (xx, yy, interacting) => {
+    const x = xx - trailer.offsetWidth / 2;
+    const y = yy - trailer.offsetHeight / 2;
 
     const keyframes = {
         transform: `translate(${x}px, ${y}px) scale(${interacting ? 2 : 1})`
@@ -13,14 +18,13 @@ const animatetrailer = (e, interacting) => {
 
     trailer.animate(keyframes, {
         duration: 500,
-        fill: "forwards",
-        easing: "linear"
+        fill: "forwards"
     });
 }
 
-const animateTrailer2 = (e) => {
-    const xx = e.clientX - trailer2.offsetWidth / 2;
-    const yy = e.clientY - trailer2.offsetHeight / 2;
+const animateTrailer2 = (x, y) => {
+    const xx = x - trailer2.offsetWidth / 2;
+    const yy = y - trailer2.offsetHeight / 2;
 
     const keyframes = {
         transform: `translate(${xx}px, ${yy}px)`
@@ -33,10 +37,19 @@ const animateTrailer2 = (e) => {
 }
 
 window.onmousemove = e => {
-    // do some stuff
-    const interactable = e.target.closest(".interactable"),
-        interacting = interactable !== null;
+    // Get mouse position and interactions
+    interactable = e.target.closest(".interactable");
+    interacting = interactable !== null;
 
-    animatetrailer(e, interacting);
-    animateTrailer2(e);
+    x = e.clientX;
+    y = e.clientY;
 }
+
+// Self-executing anonymous function that calls itself
+(function(){
+    // Use mouse position and interactions to animate every 4ms
+    animatetrailer(x, y, interacting);
+    animateTrailer2(x, y);
+
+    setTimeout(arguments.callee, 4);
+})();
