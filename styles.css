@@ -74,11 +74,10 @@ p {
 
 .socials {
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     display: flex;
-    min-width: 0px;
+    max-width: 400px;
     width: 100vw;
-    gap: 50px;
     margin-top: 50px;
     text-decoration: none;
     -webkit-touch-callout: none;
@@ -176,12 +175,8 @@ p {
 }
 
 .render {
-    width: 100%;
-    height: 100%;
     aspect-ratio: 1 / 1;
-    border-radius: 15px;
-    object-fit: cover;
-    object-position: center;
+    background-size:cover;
 }
 
 .interactable .render {
@@ -190,15 +185,19 @@ p {
     transition: 500ms ease;
 }
 
+.image{
+    overflow: hidden;
+    border-radius: 15px;
+}
+
 .interactable:hover .render {
     transform: scale(1.2);
-    box-shadow: 0px 0px 50px 5px gray;
+    box-shadow: inset 0px 0px 50px 20px black;
 }
 
 .container {
     justify-content: center;
     align-items:center;
-    margin-top: 10px;
     display: grid;
     padding:10px;
     width: 100vw;
@@ -254,11 +253,14 @@ footer {
 
 .separator {
     display: flex;
+    position: relative;
     flex-direction: column;
-    height: 200px;
+    gap: 25px;
+    margin-top: 100px;
+    min-height: 200px;
     justify-content: center;
     align-items: center;
     text-align: center;
-    line-height: 45px;
+    line-height: 25px;
     font-family: 'Montserrat', sans-serif;
 }

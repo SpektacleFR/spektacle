@@ -25,7 +25,7 @@ $.ajax({
             if (val.match(/\.(jpe?g|png|gif)$/)) { 
                 for (var i = 1; i <= 1; i++) {
                     $(`<a href="${val}" class="interactable image">
-                    <img src="${replaceLastOccurrenceInString(val, '/', '/thumbnails/')}" class="render" alt="render">
+                    <div class="render" style="background-image: url(${replaceLastOccurrenceInString(val, '/', '/thumbnails/')}); background-position: 50%"></div>
                     </a>`).appendTo('#renders');
                     console.log(replaceLastOccurrenceInString(val, '/', '/thumbnails/'))
                 }
