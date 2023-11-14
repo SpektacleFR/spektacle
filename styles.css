@@ -31,6 +31,17 @@ body:hover > #trailer {
     opacity: 1;
 }
 
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+}
+
+li {
+    color: white;
+    text-align: left;
+}
+
 #trailer2 {
     height: 10px;
     width: 10px;
@@ -79,6 +90,7 @@ h3 {
 
 p {
     color: white;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .description {
@@ -305,8 +317,24 @@ footer {
     text-align: center;
     line-height: 35px;
     font-family: 'Montserrat', sans-serif;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
+.separator-small {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: 35px;
+    font-family: 'Montserrat', sans-serif;
+}
 
 .projects {
     color: #FFFFFF;
@@ -322,4 +350,9 @@ footer {
 .subtext {
     font-size: x-small;
     line-height: 10px;
+}
+
+.smalltext {
+    font-size: 8px;
+    text-align: center;
 }
